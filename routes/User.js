@@ -41,10 +41,10 @@ exports.create = function(req, res) {
     newUser.state = req.body.state;
     newUser.qrCode = req.body.qrCode;
 
-    newUser.save(function(err) {
+    newUser.save(function(err,user) {
 
         if(!err) {
-          res.json(201, {message: "Account created with name: "});
+          res.json(201, {message: ""});
         } else {
           res.json(500, {message: "Could not create Account. Error: " + err});
         }

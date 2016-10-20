@@ -20,11 +20,13 @@ var homeSchema = new Schema({
 });
 var sensorSchema = new Schema({
 	_sensorid: Number,
-	Active: Boolean
+	Active: Boolean,
+	User: Number
 });
 var cameraSchema = new Schema({
 	_id:Number,
-	ip:String
+	ip:String,
+	User: Number
 });
 var user = mongoose.model('user', userSchema);
 var home = mongoose.model('home', homeSchema);

@@ -1,5 +1,6 @@
 var Sensor = require('../models/Models').Sensor;
-
+var User = require('../models/Models').User;
+var http = require('https');
 /*
  * Users Routes
  *
@@ -87,33 +88,22 @@ exports.setoff = function(req,res){
   Sensor.findById(id, function(err, doc) {
     if(!err && doc) {
       //Log to Spark
+      var spark = require('ciscospark');
 
-      var options = {
-		  host: 'https://api.ciscospark.com',
-		  path: '/v1/messages',
-		  method: 'POST',
-		  headers: {
-        	"Authorization":"Bearer MDZhMmRlZTAtOGY4Ni00NGVhLWJhZmMtNzNhZDdjNDIyMDAxODhlM2I2ZTgtNTIy",
-    		"Content-Type": "application/json"
-    	}
-		};
-		var postData = querystring.stringify({
-  		"roomId" : "Y2lzY29zcGFyazovL3VzL1JPT00vZjQwZmUzMDAtOTZmMy0xMWU2LTkzODAtNmYyNTJmNWZjZGI0",
-  		"text" : "SENSOR HAS GONE OFFFFFF"
+		    spark.messages.create({
+		      text: 'SENSOR HAS GONE OFFFFFF',
+		      roomId: "Y2lzY29zcGFyazovL3VzL1JPT00vZjQwZmUzMDAtOTZmMy0xMWU2LTkzODAtNmYyNTJmNWZjZGI0"
 
-		});
+		  }).then(function(){
 
 
-		http.request(options, function(res) {
-		  res.setEncoding('utf8');
-		  res.on('data', function (chunk) {
-		    console.log('BODY: ' + chunk);
-		  });
-			res.write(postData);
-		}).end();
-      //Send push notifcation to android
-      //
+
       res.json(200, { message: "Sensor setoff."});
+ 		 }).catch(function(reason) {
+		    console.error(reason);
+		    process.exit(1);
+		  });
+
     } else if(!err) {
       res.json(404, { message: "Could not find Sensor."});
     } else {
