@@ -80,3 +80,16 @@ exports.delete = function(req, res) {
     }
   });
 }
+
+exports.qrcode = function(req,res){
+  var qcode = req.params.qrcode;
+  User.findOne({ 'user.qrcode': qcode}, function(err, doc) {
+    if(!err && doc) {
+      res.json(200, doc);
+    } else if(err) {
+      res.json(500, { message: "Error loading User." + err});
+    } else {
+      res.json(404, { message: "User not found."});
+    }
+  });
+}

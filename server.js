@@ -31,7 +31,7 @@ routes.route('/').get(controller.api);
 app.use('/setoff', sensor.setoff);
 
 app.get('/user', user.index);
-app.get('/user/:id', user.show);
+app.get('/user/:email', user.show);
 app.post('/user', user.create);
 app.put('/user', user.update);
 app.delete('/user', user.delete);

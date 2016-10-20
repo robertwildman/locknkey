@@ -17,8 +17,8 @@ exports.index = function(req, res) {
 }
 
 exports.show = function(req, res) {
-  var id = req.params.id; // The id of the User the user wants to look up.
-  User.findById(id, function(err, doc) {
+  var email = req.params.email; // The id of the User the user wants to look up.
+  User.findOne({ 'user.emailAdress': email}, function(err, doc) {
     if(!err && doc) {
       res.json(200, doc);
     } else if(err) {
