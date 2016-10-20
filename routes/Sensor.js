@@ -31,7 +31,7 @@ exports.show = function(req, res) {
 
 exports.create = function(req, res) {
   //Gets infomation from the request,
-    var newSensor = new Home();
+    var newSensor = new Sensor();
     newSensor.active = req.body.active;
     newSensor.save(function(err) {
 
@@ -80,4 +80,44 @@ exports.delete = function(req, res) {
       res.json(403, {message: "Could not delete User. " + err });
     }
   });
+}
+
+exports.setoff = function(req,res){
+	var id = req.body.id;
+  Sensor.findById(id, function(err, doc) {
+    if(!err && doc) {
+      //Log to Spark
+
+      var options = {
+		  host: 'https://api.ciscospark.com',
+		  path: '/v1/messages',
+		  method: 'POST',
+		  headers: {
+        	"Authorization":"Bearer MDZhMmRlZTAtOGY4Ni00NGVhLWJhZmMtNzNhZDdjNDIyMDAxODhlM2I2ZTgtNTIy",
+    		"Content-Type": "application/json"
+    	}
+		};
+		var postData = querystring.stringify({
+  		"roomId" : "Y2lzY29zcGFyazovL3VzL1JPT00vZjQwZmUzMDAtOTZmMy0xMWU2LTkzODAtNmYyNTJmNWZjZGI0",
+  		"text" : "SENSOR HAS GONE OFFFFFF"
+
+		});
+
+
+		http.request(options, function(res) {
+		  res.setEncoding('utf8');
+		  res.on('data', function (chunk) {
+		    console.log('BODY: ' + chunk);
+		  });
+			res.write(postData);
+		}).end();
+      //Send push notifcation to android
+      //
+      res.json(200, { message: "Sensor setoff."});
+    } else if(!err) {
+      res.json(404, { message: "Could not find Sensor."});
+    } else {
+      res.json(403, {message: err });
+   }
+});
 }

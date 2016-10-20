@@ -19,7 +19,7 @@ var homeSchema = new Schema({
 	cameras:Array
 });
 var sensorSchema = new Schema({
-	_id: Number,
+	_sensorid: Number,
 	Active: Boolean
 });
 var cameraSchema = new Schema({

@@ -27,7 +27,7 @@ routes.route('/').get(controller.api);
 */
 
 // initialize routes with the /api prefix
-app.use('/api', api.api);
+app.use('/setoff', sensor.setoff);
 
 app.get('/user', user.index);
 app.get('/user/:id', user.show);
