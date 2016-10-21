@@ -16,10 +16,16 @@ var bodyParser = require('body-parser');
 
 // use morgan to log request to the console
 app.use(morgan('dev'));
+app.use(express.static(__dirname + '/app'));
+app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+app.use('/styles',  express.static(__dirname + '/app/styles'));
 app.set('view engine', 'pug');
 app.use(bodyParser.json());
 var controller = require('./controllers/api'); // API controller
 var routes = express.Router();
+app.get('/', function(request, response) {
+  response.render('index');
+});
 
 routes.route('/').get(controller.api);
 
@@ -28,7 +34,8 @@ routes.route('/').get(controller.api);
 */
 
 // initialize routes with the /api prefix
-app.use('/setoff', sensor.setoff);
+app.get('/setoff', sensor.setoff);
+app.get('/alarmoff', sensor.alarmoff);
 
 app.get('/user', user.index);
 app.get('/user/:email', user.show);

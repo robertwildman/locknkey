@@ -1,4 +1,223 @@
+.light
+{
+  width:20px;height:20px;
+  border: solid 1px #555;
+  background-color: yellow;
+  box-shadow: 0px -0px 10px yellow;
+  border-radius:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.lightoff
+{
+  width:20px;height:20px;
+  border: solid 1px #555;
+  background-color: white;
+  border-radius:15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.accesspoint
+{
+  z-index: 1;
+  position: fixed;
+  width:20px;height:20px;
+  border: solid 1px #555;
+  background-color: black;
+  border-radius:15px;
+}
+
+
+.ac1
+{
+  margin-left: 170px;
+  margin-top: 10px;
+
+}
+.ac2
+{
+  margin-top: 360px;
+  margin-left: 10px;
+}
+.ac3
+{
+  margin-top: 360px;
+  margin-left: 370px;
+}
+.room
+{
+  text-align: center;
+}
+
+.greatroom
+{
+  position: relative;
+  width: 200px;
+  height: 200px;
+  float:left;
+  border-left: 6px solid black;
+  border-top: 6px solid black;
+  border-right: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.dinning
+{
+  position: relative;
+  width:100px;
+  height: 200px;
+  float:left;
+  border-top: 6px solid black;
+  border-left: 2px dotted black;
+  border-right: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.kitchen
+{
+  width:100px;
+  height: 200px;
+  float:left;
+  border-top: 6px solid black;
+  border-right: 6px solid black;
+  border-left: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.hall1
+{
+  width:250px;
+  height: 50px;
+  float:left;
+
+  border-top: 2px dotted black;
+  border-right: 2px dotted black;
+  border-bottom: 2px dotted black;
+  border-left: 6px solid black;
+}
+.bath
+{
+  width:150px;
+  height: 50px;
+  float:left;
+  border-right: 6px solid black;
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+  border-bottom: 2px dotted black;
+}
+.den{
+  width:160px;
+  height: 150px;
+  float:left;
+  border-left: 6px solid black;
+  border-bottom: 6px solid black;
+  border-top: 2px dotted black;
+  border-right: 2px dotted black;
+}
+.hall2{
+  width: 80px;
+  height: 150px;
+  float:left;
+  border-bottom: 6px solid black;
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+  border-right: 2px dotted black;
+}
+.hallin
+{
+  width: 80px;
+  height: 100px;
+  float:left;
+  border-bottom: 2px dotted black;
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+  border-right: 2px dotted black;
+}
+.door
+{
+  width: 80px;
+  height: 45px;
+  float:left;
+    border-bottom: 2px dotted black;
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+  border-right: 2px dotted black;
+}
+.livingroom
+{
+  width:160px;
+  height:150px;
+  float:left;
+  border-right: 6px solid black;
+  border-bottom: 6px solid black;
+
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+}
+.outside
+{
+  float:left;
+  width: 400px;
+  background-color: green;
+  height: 50px;
+}
+
+.house{
+  margin-top: 100px;
+  width: 400px;
+  height: 450px;
+  float: left;
+}
+
+
+.house2{
+  width: 312px;
+  float: right;
+  height: 312px;
+  border: 6px solid black;
+}
+.bedroom
+{
+  float:left;
+  width: 100px;
+  height: 150px;
+  border: 2px dotted black;
+}
+.bedroom1
+{
+  border: 2px dotted black;
+}
+.bedroom2
+{
+border: 2px dotted black;
+}
+.bedroom3
+{border: 2px dotted black;
+
+}
+.hall3{
+  float:left;
+  width:300px;
+  height: 50px;
+  border: 2px dotted black;
+}
+.bathroom
+{
+  float:left;
+  width: 150px;
+  height: 100px;
+  border: 2px dotted black;
+}
+.office
+{
+  float:left;
+  width: 150px;
+  height: 100px;
+  border: 2px dotted black;
+}
 
 .browserupgrade {
   margin: 0.2em 0;
@@ -63,27 +282,3 @@ body {
   }
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
-}

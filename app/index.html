@@ -24,37 +24,54 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <a id="testcase">Test Cases</a>
+    <a id="setoff">Set Off</a>
+    <div class="container" id="con">
+      <canvas id="canvas" width="600" height="600">
 
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">Jarvis</h3>
+      </canvas>
+    <div class="house">
+          <div class="accesspoint ac1" id="ac1"></div>
+          <div class="accesspoint ac2" id="ac2"></div>
+          <div class="accesspoint ac3" id="ac3"></div>
+      <div class="greatroom room">Great Room
+      <div class="light"></div></div>
+      <div class="dinning room">Dinning
+      <div class="lightoff"></div></div>
+      <div class="kitchen">Kitchen</div>
+      <div class="hall1">Hall 1</div>
+      <div class="bath"> Bath </div>
+      <div class="den"> Bedroom </div>
+      <div class="hall2"> <div class="hallin"> </div>
+          <div class="door"></div>
       </div>
-
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
+      <div class="livingroom">Living Room</div>
+      <div class="outside"> Outside </div>
       </div>
-
-      <div class="row marketing">
-        <table class="table" id = "maintable">
-           <tr>
-            <th>Account Name</th>
-            <th>Account Desc</th>
-            <th>Incomes</th>
-            <th>Spends</th>
-          </tr>
+      <div class="house2">
+        <div class="bedroom bedroom 1">Bedroom 1</div>
+        <div class="bedroom bedroom 2">Bedroom 2</div>
+        <div class="bedroom bedroom 3">Bedroom 3</div>
+        <div class="hall3">Hall 3</div>
+        <div class="bathroom">Bathroom</div>
+        <div class="office">Office</div>
+      </div>
+    </div>
+    </div>
+    <div id="testcon">
+        <table class="table">
+          <caption>Sensor Infomation</caption>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name </th>
+              <th>Room</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody id="seninfo">
+          </tbody>
         </table>
-      </div>
-
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
-      </div>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

@@ -28,6 +28,8 @@ var cameraSchema = new Schema({
 	ip:String,
 	User: Number
 });
+
+
 var user = mongoose.model('user', userSchema);
 var home = mongoose.model('home', homeSchema);
 var sensor = mongoose.model('sensor', sensorSchema);
