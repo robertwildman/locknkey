@@ -30,7 +30,7 @@ function drawtr(x,y)
 	var ctx = canvas.getContext('2d');
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	draw();
-	ctx.fillStyle = 'yellow';
+	ctx.fillStyle = "#ffff11";
 	if((x >= 100 && x <= 300) && (y >= 100 && y <= 300) )
 	{
 	ctx.fillRect(100,100,200,200);
@@ -62,7 +62,10 @@ function drawtr(x,y)
 	else if((x >= 260 && x <= 340) && (y >= 450 && y <= 500) ){
 
 	ctx.fillRect(260,450,80,50);
+	}else if((x >= 100 && x <= 500) && (y >= 500 && y <= 600) ){
+		ctx.fillRect(100,510,400,100);
 	}
+
 					ctx.fillStyle = 'black'
 			        ctx.beginPath();
 				    ctx.moveTo(x,y);
